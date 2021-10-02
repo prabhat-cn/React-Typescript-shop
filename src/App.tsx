@@ -87,6 +87,7 @@ const App = () => {
           cartItems={cartItems}
           addToCart={handleAddToCart}
           removeFromCart={handleRemoveFromCart}
+          onCartClose={cartClose}
         />
       </Drawer>
       {/* <StyledButton onClick={() => setCartOpen(true)} /> */}

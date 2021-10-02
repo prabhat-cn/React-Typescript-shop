@@ -1,3 +1,6 @@
+import { useState } from 'react';
+import Button from '@material-ui/core/Button'
+
 import CartItem from '../CartItem/CartItem'
 // Styles
 import { Wrapper } from './Cart.styles'
@@ -8,10 +11,12 @@ type Props = {
     cartItems: CartItemType[];
     addToCart: (clickedItem: CartItemType) => void;
     removeFromCart: (id: number) => void;
+    onCartClose: () => void;
 };
 
 
-const Cart: React.FC<Props> = ({ cartItems, addToCart, removeFromCart }) => {
+const Cart: React.FC<Props> = ({ cartItems, addToCart, removeFromCart, onCartClose }) => {
+
     const calculateTotal = (items: CartItemType[]) =>
         items.reduce((ack: number, item) => ack + item.amount * item.price, 0);
 
@@ -19,6 +24,7 @@ const Cart: React.FC<Props> = ({ cartItems, addToCart, removeFromCart }) => {
 
     return (
         <Wrapper>
+            <Button size="small" variant="text" onClick={onCartClose}> x Close </Button>
             <h2>Your Shopping Cart</h2>
             {/* {cartItems.length === 0 ? (<p>No Items Found!</p>) : null}
             {cartItems.map(() => (
