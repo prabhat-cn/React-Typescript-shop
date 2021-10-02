@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "youtube": "https://youtu.be/sfmL6bGbiN8",
   "api": "https://fakestoreapi.com/",
+  "Project-Link": "https://shopping-app-demo.netlify.app/",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.12.3",
